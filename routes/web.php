@@ -19,8 +19,9 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('/addRainfall', [\App\Http\Controllers\RainfallController::class, 'index'])->name('rainfall');
-Route::post('/addRainfall', [\App\Http\Controllers\RainfallController::class, 'store'])->name('rainfall');
+Route::get('/rainfall', [\App\Http\Controllers\RainfallController::class, 'index'])->name('rainfall');
+Route::post('/rainfall', [\App\Http\Controllers\RainfallController::class, 'store'])->name('rainfall');
+Route::delete('/rainfall/{weather}', [\App\Http\Controllers\RainfallController::class, 'destroy'])->name('rainfall.destroy');
 
 Route::get('/register', [\App\Http\Controllers\Auth\RegisterController::class, 'index'])->name('register');
 Route::post('/register', [\App\Http\Controllers\Auth\RegisterController::class, 'store']);

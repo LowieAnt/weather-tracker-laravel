@@ -18,4 +18,9 @@ class Weather extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function postedBy(User $user)
+    {
+        return $user->id === $this->user_id;
+    }
 }

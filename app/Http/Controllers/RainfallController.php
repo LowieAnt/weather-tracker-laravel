@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Weather;
 use Illuminate\Http\Request;
 
 class RainfallController extends Controller
@@ -24,6 +25,12 @@ class RainfallController extends Controller
             'date' => $request->date,
         ]);
 
+        return back();
+    }
+
+    public function destroy(Weather $weather)
+    {
+        $weather->delete();
         return back();
     }
 }
