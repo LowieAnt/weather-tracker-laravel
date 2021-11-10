@@ -17,7 +17,7 @@
             <a href="{{ route('dashboard') }}" class="p-3">Dashboard</a>
         </li>
         <li>
-            <a href="" class="p-3">Post</a>
+            <a href="{{ route('rainfall') }}" class="p-3">Voeg neerslag toe</a>
         </li>
     </ul>
 
@@ -27,7 +27,7 @@
                 <a href="" class="p-3">Welcome, {{ auth()->user()->name }}!</a>
             </li>
             <li>
-                <form action="" method="post" class="p-3 inline">
+                <form action="{{ route('logout') }}" method="post" class="p-3 inline">
                     @csrf
                     <button type="submit">Logout</button>
                 </form>
